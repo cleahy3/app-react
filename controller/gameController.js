@@ -4,7 +4,7 @@ var request = require('request');
 function getDeal(req,res){
 request('http://178.62.86.6/api/deal', function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log(body) // Show the HTML for the Google homepage. 
+   // Show the HTML for the Google homepage. 
   }
 
 res.send(response.body);
@@ -20,6 +20,7 @@ function endGame(req,res){
   if (!error && response.statusCode == 200) {
     console.log(body) // Show the HTML for the Google homepage. 
   }
+  console.log(response.body);
   res.send(response.body);
 })}
 
