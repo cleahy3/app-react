@@ -3,7 +3,7 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var request = require('request');
 var app = express();
-
+var path = require('path');
 
 var routes = require('./config/routes');
 var port = process.env.PORT || 3000;
@@ -12,10 +12,10 @@ var port = process.env.PORT || 3000;
 
 
 
-
 //load current user
 
 
+app.use(express.static('app'));
 
 app.use(bodyParser.urlencoded({ extended: false }))
  
@@ -30,6 +30,8 @@ app.use(routes);
 app.listen(port , function(){
   console.log('app is listening on port'+port);
 });
+
+
 
 
 module.exports= app;

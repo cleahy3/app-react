@@ -12,6 +12,8 @@ var gameController = require('../controller/gameController');
 
 
 //sessions routes
+router.route('/')
+        .get(gameController.index);
 router.route('/end')
         .get(gameController.end);
 router.route('/deal')

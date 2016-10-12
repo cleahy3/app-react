@@ -1,6 +1,8 @@
 var request = require('request');
-
-
+var path = require('path');
+function index(req,res){
+  res.sendFile('index.html', { root: path.join(__dirname, '../app') });
+}
 function getDeal(req,res){
 request('http://178.62.86.6/api/deal', function (error, response, body) {
   if (!error && response.statusCode == 200) {
@@ -25,6 +27,7 @@ function endGame(req,res){
 })}
 
 module.exports={
+  index: index,
 	deal: getDeal,
 	end: endGame,
 	game: setGame
